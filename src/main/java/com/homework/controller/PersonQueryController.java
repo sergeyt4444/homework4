@@ -1,7 +1,6 @@
 package com.homework.controller;
 
 import com.homework.entity.Person;
-import com.homework.exception.ResourceNotFoundException;
 import com.homework.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -35,7 +34,7 @@ public class PersonQueryController {
 
     @PostMapping("/query")
     public String querySubmit(Model model, @ModelAttribute Person person,
-                              HttpServletRequest req) throws ResourceNotFoundException {
+                              HttpServletRequest req) {
         Person result = service.getPersonByFnameAndLname(person.getFname(), person.getLname());
         model.addAttribute("result", result);
         if (result != null) {
