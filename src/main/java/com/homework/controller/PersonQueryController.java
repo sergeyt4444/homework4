@@ -40,10 +40,10 @@ public class PersonQueryController {
         model.addAttribute("result", result);
         if (result != null) {
             HttpSession session = req.getSession(true);
-            Date creationTime = new Date(session.getCreationTime());
+            Date currentTime = new Date();
             String browser = req.getHeader("user-agent");
             session.setAttribute("email", result.getEmail());
-            model.addAttribute("currentTime", creationTime);
+            model.addAttribute("currentTime", currentTime);
             model.addAttribute("browser", browser);
             return "query_result";
         }
