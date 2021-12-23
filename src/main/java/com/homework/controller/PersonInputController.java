@@ -58,12 +58,12 @@ public class PersonInputController {
 
         Person person = service.savePersonFromFile(file);
         model.addAttribute("person", person);
-        service.savePerson(person);
-        HttpSession session = req.getSession();
-        session.setAttribute("email", person.getEmail());
         if (person == null) {
             return "redirect:/invalid";
         }
+        service.savePerson(person);
+        HttpSession session = req.getSession();
+        session.setAttribute("email", person.getEmail());
         return "input_result";
     }
 

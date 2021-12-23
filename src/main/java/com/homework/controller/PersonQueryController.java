@@ -38,14 +38,13 @@ public class PersonQueryController {
                               HttpServletRequest req) throws ResourceNotFoundException {
         Person result = service.getPersonByFnameAndLname(person.getFname(), person.getLname());
         model.addAttribute("result", result);
-        HttpSession session = req.getSession(true);
-
-        Date creationTime = new Date(session.getCreationTime());
-        String browser = req.getHeader("user-agent");
-        session.setAttribute("email", result.getEmail());
-        model.addAttribute("currentTime", creationTime);
-        model.addAttribute("browser", browser);
         if (result != null) {
+            HttpSession session = req.getSession(true);
+            Date creationTime = new Date(session.getCreationTime());
+            String browser = req.getHeader("user-agent");
+            session.setAttribute("email", result.getEmail());
+            model.addAttribute("currentTime", creationTime);
+            model.addAttribute("browser", browser);
             return "query_result";
         }
         else {
