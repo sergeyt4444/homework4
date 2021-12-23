@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Result</h1>
+<p th:text="'Last name: ' + ${result.lname}" />
+<p th:text="'First name: ' + ${result.fname}" />
+<p th:text="'Patronymic: ' + ${result.patron}" />
+<p th:text="'Age: ' + ${result.age}" />
+<p th:text="'Salary: ' + ${result.salary}" />
+<p th:text="'E-mail: ' + ${result.email}" />
+<p th:text="'Workplace: ' + ${result.workplace}" />
+<hr>
+<p th:text="'Request time: ' + ${currentTime}" />
+<p th:text="'Browser: ' + ${browser}" />
+<a href="/mail">Email this person</a>
+<br>
+<a href="/query">Find another person</a>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Input result</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Result</h1>
+<p th:text="'Last name: ' + ${person.lname}" />
+<p th:text="'First name: ' + ${person.fname}" />
+<p th:text="'Patronymic: ' + ${person.patron}" />
+<p th:text="'Age: ' + ${person.age}" />
+<p th:text="'Salary: ' + ${person.salary}" />
+<p th:text="'E-mail: ' + ${person.email}" />
+<p th:text="'Workplace: ' + ${person.workplace}" />
+<a href="/mail">Email this person</a>
+<br>
+<a href="/input">Submit another person</a>
+</body>
+</html>

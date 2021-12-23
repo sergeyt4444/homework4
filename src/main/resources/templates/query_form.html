@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Query form</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Find user</h1>
+<form action="#" th:action="@{/query}" th:object="${person}" method="post">
+    <p>Last name: <input type="text" th:field="*{lname}" /></p>
+    <p>First name: <input type="text" th:field="*{fname}" /></p>
+    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    <h2><a href="/input">Go to input form</a></h2>
+</form>
+</body>
+</html>
